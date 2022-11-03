@@ -48,6 +48,16 @@
                 <span class="badge badge-info right">6</span>
               </p>
             </a>
+
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Category
+                
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/layout/top-nav.html" class="nav-link">
