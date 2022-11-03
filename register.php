@@ -23,15 +23,14 @@
     <div class="card-body">
       
 
-    <?php
-    include 'Classes/Branch.php';
-    $branch = new Branch;
-    if(isset($_POST['register'])){
-      echo $branch->addBranch($_POST);
+    <?php 
+          include "Classes/Branch.php";
+          $branch = new Branch;
+          if (isset($_POST['register'])) {
+              echo $branch->addBranch($_POST);
+          }
 
-    }
-    
-    ?>
+      ?>
 
       <!-- <div class="alert alert-success"><strong>Success : </strong> Registration Completed</div> -->
       <h4 class="login-box-msg">Register a new membership</h4>
