@@ -22,7 +22,7 @@
       <a href="index2.html" class="h1"><b>SOFTOLOGY</b></a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <h4 class="login-box-msg">Sign in to start your session</h4>
 
       <form action="index3.html" method="post">
         <div class="input-group mb-3">
