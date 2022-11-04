@@ -18,7 +18,7 @@
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="index2.html" class="h1"><b>SOFTOLOGY</b></a>
+      <a href="index2.html" class="h1"><b>Register</b></a>
     </div>
     <div class="card-body">
       

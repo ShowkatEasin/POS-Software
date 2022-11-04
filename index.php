@@ -19,7 +19,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="index2.html" class="h1"><b>SOFTOLOGY</b></a>
+      <a href="index2.html" class="h1"><b>Log</b>in</a>
     </div>
     <div class="card-body">
 
@@ -28,9 +28,7 @@
     $branch = new Branch;
     if(isset($_POST['login'])){
      echo  $branch->login($_POST);
-
     }
-    
     ?>
 
 

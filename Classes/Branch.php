@@ -40,7 +40,11 @@ class Branch {
 
 			}
 			else{
-				//$password = md5($password);
+
+				
+				//$password = md5($password);    ------PROBLEM-----------
+
+
 				$sql = $this->con->query("SELECT * FROM tbl_branch WHERE (mName='$userName' OR email = '$userName' OR phone = '$userName') AND password = '$password' AND status = '1' ");
 				if ($sql->num_rows > 0) {
 					$sql = $sql->fetch_assoc();

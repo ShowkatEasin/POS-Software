@@ -13,7 +13,11 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Branch</a>  
+          <a href="#" class="d-block"> <?php 
+          if(isset($_SESSION['bName'])){
+            echo $_SESSION['bName'];
+          }
+          ?></a>  
         </div>
       </div>
 
@@ -38,6 +42,15 @@
         
 
                <li class="nav-header">Controls Area</li>
+
+               <li class="nav-item">
+                <a href="usercontrol.php" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+                <p>
+                User list
+              </p>
+            </a>
+          </li>
        
              <li class="nav-item">
             <a href="#" class="nav-link">
@@ -86,6 +99,16 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="logout.php" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+          </li>
+         
          
       
         </ul>
