@@ -26,6 +26,33 @@ class Branch {
 			}
 		}
 
-}
 
-?>
+          function login($allData){
+			$userName = $allData["userName"];
+			$password = $allData["password"];
+			if($userName ==""){
+				return '<div class="alert alert-danger"><strong>Error: </strong>User Name is Empty</div>';
+			}
+
+			elseif($password ==""){
+
+				return '<div class="alert alert-danger"><strong>Error: </strong>Password is Empty</div>';
+
+			}
+			else{
+				//$password = md5($password);
+				$sql = $this->con->query("SELECT * FROM tbl_branch WHERE (mName='$userName' OR email = '$userName' OR phone = '$userName') AND password = '$password' AND status = '1' ");
+				if ($sql->num_rows > 0) {
+					$sql = $sql->fetch_assoc();
+					session_start();
+					$_SESSION['id'] = $sql["id"];
+					$_SESSION['bName'] = $sql["bName"];
+					$_SESSION['mName'] = $sql["mName"];
+					header("location: dashboard.php");
+				}
+				else{
+					return '<div class="alert alert-danger"><strong>Error: </strong>User Name or Password not Found</div>';
+				}
+			}
+		 }
+      }
