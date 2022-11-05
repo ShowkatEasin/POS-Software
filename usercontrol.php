@@ -3,153 +3,197 @@ include "includes/header.php";
 
 ?>
 
-  <!-- Preloader -->
-  <?php
-  include "includes/loader.php";
+<!-- Preloader -->
+<?php
+include "includes/loader.php";
 ?>
-  <!-- Navbar -->
- 
-  <?php
-  include "includes/navbar.php";
-  ?>
- <!-- /.navbar -->
+<!-- Navbar -->
 
-  <!-- Main Sidebar Container -->
-  <?php
-  include "includes/mainslider.php";
+<?php
+include "includes/navbar.php";
+?>
+<!-- /.navbar -->
+
+<!-- Main Sidebar Container -->
+<?php
+include "includes/mainslider.php";
 ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <?php
-    include "includes/headercontent.php";
-?>
-    <!-- /.content-header -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+      <div class="container">
+        <div class="row mb-0">
+          <div class="col-sm-0">
+            <h1 class="m-0">Branch User List</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v2</li> -->
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
 
           <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Branch Manager User List</h3>
+            <div class="card-header">
+              <h3 class="card-title">Branch Manager User List</h3>
 
-                <div class="card-tools">
-                  <ul class="pagination pagination-sm float-right">
-                    <li class="page-item"><a class="page-link" href="#">«</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">»</a></li>
-                  </ul>
-                </div>
+              <div class="card-tools">
+                <ul class="pagination pagination-sm float-right">
+                  <li class="page-item"><a class="page-link" href="#">«</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body p-2">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>SL No.</th>
-                      <th>Branch Name</th>
-                      <th>Manager Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Status</th>
-                      <th colspan="2">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body p-2">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>SL No.</th>
+                    <th>Branch Name</th>
+                    <th>Manager Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th colspan="2">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
 
-                    include "Classes/Branch.php";
-                    $branch = new Branch;
-                    if(isset($_GET['active'])){
-                      $id= $_GET['active'];
-                      $branch->active($id);
-                    }
+                  include "Classes/Branch.php";
+                  $branch = new Branch;
+                  if (isset($_GET['active'])) {
+                    $id = $_GET['active'];
+                    $branch->active($id);
+                  }
 
-                    if(isset($_GET['inactive'])){
-                      $id= $_GET['inactive'];
-                      $branch->inactive($id);
-                    }
+                  if (isset($_GET['inactive'])) {
+                    $id = $_GET['inactive'];
+                    $branch->inactive($id);
+                  }
 
-                    $obj = $branch->allBranches();
-                    if($obj->num_rows > 0){
-                      while($row = $obj->fetch_assoc()) { $sl=1;
-                      if($row["status"]==1){
-                        $status = '<a href="usercontrol.php?active='.$row["id"].'" 
+                  if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $branch->delete($id);
+                  }
+
+                  $obj = $branch->allBranches();
+                  if ($obj->num_rows > 0) {
+                    while ($row = $obj->fetch_assoc()) {
+                      $sl = 1;
+                      if ($row["status"] == 1) {
+                        $status = '<a href="usercontrol.php?active=' . $row["id"] . '" 
                         name="active" class="btn btn-success btn-sm">
                         <i class="fas fa-eye"></i>
                         </a>';
-                        
-                      } else{
-                        $status = '<a href="usercontrol.php?inactive='.$row["id"].'" name="inactive" 
+                      } else {
+                        $status = '<a href="usercontrol.php?inactive='. $row["id"] .'" name="inactive" 
                         class="btn btn-danger btn-sm"><i class="fas fa-eye-slash"></i></a>';
                       } ?>
 
-                      <tbody>
-                        <tr>
-                          <td><?php echo $sl ?></td>
-                          <td><?php echo $row["bName"];?></td>
-                          <td><?php echo $row["mName"];?></td>
-                          <td><?php echo $row["email"];?></td>
-                          <td><?php echo $row["phone"];?></td>
-                          <td><?php echo $status ?></td>
-                          <td><a href="#"><i class="fa fa-edit btn btn-info btn-sm"></i></a></td>
-                          <td><a href="#"><i class="fa fa-edit btn btn-danger btn-sm"></i></a></td>
-                         
-                        </tr>
-                      </tbody>
+                <tbody>
+                  <tr>
+                    <td><?php echo $sl ?></td>
+                    <td><?php echo $row["bName"]; ?></td>
+                    <td><?php echo $row["mName"]; ?></td>
+                    <td><?php echo $row["email"]; ?></td>
+                    <td><?php echo $row["phone"]; ?></td>
+                    <td><?php echo $status ?></td>
 
-                     <?php  $sl++; }
+                    
 
-          
+                    <td><a href="branchedit.php?id= <?php echo $row ["id"] ?>"class="btn btn-info btn-sm"><i class="fa fa-edit "></i></a></td>
+                    
+                    <td><button data-toggle ="modal" data-target ="#delete" 
+                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+
+
+                  </tr>
+                </tbody>
+
+              <?php $sl++; ?> 
+
+               <!-- Delete Modal -->
+            <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure want to delete this Branch?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="usercontrol.php?id= <?php echo $row ["id"] ?>" class="btn btn-danger">
+                    Confirm</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+              <?php 
                     }
-                    else{ ?>
+                  } else { ?>
 
-                       <tbody>
-                        <tr>
-                          <td colspan="8" class="text-center"> Data Not Found</td>
-                        </tr>
-                       </tbody>
+              <tbody>
+                <tr>
+                  <td colspan="8" class="text-center"> Data Not Found</td>
+                </tr>
+              </tbody>
 
-                   <?php 
-                   
+            <?php
+
                   }
 
-                
-                    ?>
+            ?>
+          
 
-                
-                  </tbody>
-                </table>
-              </div>
-          </div>
-              <!-- /.card-body -->
+           
+            <!-- /.card-body -->
             </div>
 
           </div>
         </div>
         <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+      </div>
+      <!--/. container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 
-  <!-- Main Footer -->
-  <?php
-  include "includes/footer.php";
-  ?>
+<!-- Main Footer -->
+<?php
+include "includes/footer.php";
+?>
 </div>
 <!-- ./wrapper -->
 
@@ -157,9 +201,10 @@ include "includes/header.php";
 <!-- REQUIRED SCRIPTS -->
 
 <?php
-  include "includes/scripts.php";
-  ?>
+include "includes/scripts.php";
+?>
 
 
 </body>
+
 </html>

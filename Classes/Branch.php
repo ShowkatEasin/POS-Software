@@ -79,6 +79,27 @@ class Branch {
 			echo "<script>window.location.replace('usercontrol.php')</script>";
 		 }
 
+		 function delete($id){
+			$sql = $this->con->query("DELETE FROM tbl_branch  WHERE id ='$id'");
+			// header("location: usercontrol.php");
+			echo "<script>window.location.replace('usercontrol.php')</script>";
+		 }
 
-
+		 function findBranch($id){
+			$sql = $this->con->query("SELECT * FROM tbl_branch WHERE id ='$id'");
+			return $sql;
+			
       }
+
+	  function update($alldata, $id){
+		$bName = $alldata['bName'];
+		$mName = $alldata['mName'];
+		$phone = $alldata['phone'];
+		$email = $alldata['email'];
+		$sql = $this->con->query("UPDATE tbl_branch SET bName = 
+		'$bName',mName = '$mName',phone = '$phone',email = '$email' WHERE id ='$id'");
+		echo "<script>window.location.replace('usercontrol.php')</script>";
+		
+		
+  }
+	}
