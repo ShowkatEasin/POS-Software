@@ -97,9 +97,7 @@ class Branch {
 		$phone = $alldata['phone'];
 		$email = $alldata['email'];
 		$sql = $this->con->query("UPDATE tbl_branch SET bName = 
-		'$bName',mName = '$mName',phone = '$phone',email = '$email' WHERE id ='$id'");
+	   '$bName', mName = '$mName', phone = '$phone', email = '$email' WHERE id ='$id'");
 		echo "<script>window.location.replace('usercontrol.php')</script>";
-		
-		
   }
 	}

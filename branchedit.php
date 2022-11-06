@@ -106,7 +106,7 @@ include "includes/header.php";
 
        
         <div class="col-4">
-            <button type="submit" name="register" class="btn btn-primary btn-block">Update</button>
+            <button type="submit" name="update" class="btn btn-primary btn-block">Update</button>
           </div>
    
 
