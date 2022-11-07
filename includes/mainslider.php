@@ -65,7 +65,8 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Category
+
+                Purchase
                 
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">6</span>
@@ -73,16 +74,16 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="addproduct.php" class="nav-link">
+                <a href="purchase.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add Product</p>
+                  <p>Add Purchase</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="manageproduct.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Manage Product</p>
+                  <p>Manage Purchase</p>
                 </a>
               </li>
             
