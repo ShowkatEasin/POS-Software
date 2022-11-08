@@ -58,13 +58,13 @@ include "includes/mainslider.php";
               <div class="row mt-3">
               <div class="col-md-3">
                     <div class="from-group">
-                        <input type="text" name="barcode" class="form-control" placeholder="Enter Product Barcode">
+                        <input type="text" id="barcode" class="form-control" placeholder="Enter Product Barcode">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="from-group">
-                        <input readonly type="text" name="cost_price" class="form-control" placeholder="Product Cost Price">
+                        <input readonly type="text" id="cost_price" class="form-control" placeholder="Product Cost Price">
                     </div>
                 </div>
 
