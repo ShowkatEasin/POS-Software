@@ -39,19 +39,22 @@ include "includes/mainslider.php";
 
                 <div class="col-md-3">
                     <div class="from-group">
-                        <input type="text" name="cname" class="form-control" placeholder="Enter Company Name">
+                        <input type="text" id="cname" class="form-control" placeholder="Enter Company Name">
+
+                        <input readonly type="hidden" id="product_id" class="form-control" placeholder="Product Cost Price">
+                        
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="from-group">
-                        <input type="text" name="invoice" class="form-control" placeholder="Enter Invoice Number">
+                        <input type="text" id="invoice" class="form-control" placeholder="Enter Invoice Number">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="from-group">
-                        <input readonly type="text" name="stock" class="form-control" placeholder="Available Stock">
+                        <input readonly type="text" id="stock" class="form-control" placeholder="Available Stock">
                     </div>
                 </div>
                 </div>
@@ -68,24 +71,26 @@ include "includes/mainslider.php";
                     </div>
                 </div>
 
+                 
                 <div class="col-md-3">
                     <div class="from-group">
-                        <input type="text" name="quantity" class="form-control" placeholder="Enter Quantity">
+                        <input type="text" id="quantity" class="form-control" placeholder="Enter Quantity">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="from-group">
-                        <input readonly type="text" name="total" class="form-control" placeholder="Total">
+                        <input readonly type="text" id="total" class="form-control" placeholder="Total">
                     </div>
-                    <button class="btn btn-info mt-3">Add Items</button>
+                    
+                    <button class="addItem btn btn-info mt-3">Add Items</button>
                 </div>
               </div>
               <div class="row mt-3">
                 <table class="table" border="1">
                     <thead>
                         <tr>
-                            <th>Data</th>
+                            <th>Date </th>
                             <th>Barcode</th>
                             <th>Price</th>
                             <th>Price</th>

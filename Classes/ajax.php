@@ -4,7 +4,6 @@ include "Purchase.php";
 $action =$_POST['action'];
 $action();
 
-
 function findProduct(){
     $purchase = new Purchase;
     $barcode = $_POST['barcode'];
@@ -12,6 +11,7 @@ function findProduct(){
     echo json_encode($sql);
 
 }
+
 
 
 ?>
