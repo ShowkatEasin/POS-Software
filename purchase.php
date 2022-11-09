@@ -95,7 +95,7 @@
         				<th>Barcode</th>
         				<th>Price</th>
         				<th>Quantity</th>
-                        <th>Total</th>
+                <th>Total</th>
         				<th>Remove</th>
         			</tr>
         		</thead>

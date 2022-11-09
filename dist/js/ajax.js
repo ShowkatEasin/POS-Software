@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 				"action":action,
 				"barcode":barcode
 			},
-            success:function(response){
+			success:function(response){
 				jQuery("#cost_price").val(response.costPrice);
 				jQuery("#product_id").val(response.id);
 				findStock(response.id);
