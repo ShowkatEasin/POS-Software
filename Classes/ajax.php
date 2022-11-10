@@ -20,6 +20,28 @@
 		}
 		echo $totalQnt;
 	}
+	function salesTotalQnt(){
+		$purchase = new Purchase;
+		$invoice = $_POST['invoice'];
+		$sql = $purchase->salesTotalQnt($invoice);
+		
+		$totalQnt = 0;
+		while ($data = $sql->fetch_assoc()) {
+			$totalQnt = $totalQnt + $data["quantity"];
+		}
+		echo $totalQnt;
+	}
+	function salesTotalAmnt(){
+		$purchase = new Purchase;
+		$invoice = $_POST['invoice'];
+		$sql = $purchase->salesTotalQnt($invoice);
+		
+		$totalamnt = 0;
+		while ($data = $sql->fetch_assoc()) {
+			$totalamnt += $data["total_amount"];
+		}
+		echo $totalamnt;
+	}
 	function calPrice(){
 		$purchase = new Purchase;
 		$invoice = $_POST['invoice'];
@@ -96,3 +118,86 @@
 		$sql = $purchase->removeItem($id);
 		echo $sql;
 	}
+
+	function invoicege(){
+		$purchase = new Purchase;
+		$sql = $purchase->invoicege();
+		if($sql == "Empty"){
+			echo "Empty";
+		}
+		else{
+			echo json_encode($sql);
+		}
+
+	}
+
+	function SaddItem(){
+		session_start();
+		$d= $_POST['d'];
+	    $invoice=$_POST['invoice'];
+	    $product_id=$_POST['product_id'];
+	    $sale_price=$_POST['sale_price'];
+	    $quantity=$_POST['quantity'];
+	    $total_amount=$_POST['total_amount'];
+	    $br_id=$_SESSION['id'];
+	    $purchase = new Purchase;
+		$sql = $purchase->SaddItem($d,$invoice,$product_id,$sale_price, $quantity,$total_amount,$br_id);
+		echo $sql;
+
+	}
+ function updateStock(){
+ 	$id = $_POST['id'];
+ 	$qnt = $_POST['qnt'];
+ 	$purchase = new Purchase;
+	$sql = $purchase->updateStockabc($id,$qnt);
+	echo $sql;
+ }
+ function salesShowItem(){
+ 	$purchase = new Purchase;
+ 	$invoice = $_POST['invoice'];
+	$sql = $purchase->salesShowItem($invoice);
+	$tdata ="";
+	while($data= $sql->fetch_assoc()){
+		$tdata .='<tr>
+		   <td>'.$data["sdate"].'</td>
+		   <td>'.$data["invoice"].'</td>
+		   <td>'.$data["sale_price"].'</td>
+		   <td>'.$data["quantity"].'</td>
+		   <td>'.$data["total_amount"].'</td>
+		   <td><button value="'.$data["id"].'" class="salesRemoveItem btn btn-sm btn-danger">x</button></td>
+
+		</tr>';
+	}
+	echo $tdata;
+ }
+ function insertSalesSummery(){
+ 	$sdate = $_POST['sdate'];
+	$invoice = $_POST['invoice'];
+	$total_quantity = $_POST['total_quantity'];
+	$total_price = $_POST['total_price'];
+	$dis = $_POST['dis'];
+	$dis_amount = $_POST['dis_amount'];
+	$grand_total = $_POST['grand_total'];
+	$pay = $_POST['pay'];
+	$due = $_POST['due'];
+	session_start();
+	$br_id = $_SESSION['id'];
+	$purchase = new Purchase;
+	$sql = $purchase->insertSalesSummery($sdate,$invoice,$total_quantity,$total_price
+    	,$dis,$dis_amount,$grand_total,$pay,$due,$br_id);
+	if ($sql) {
+		echo ("OK");
+	}
+	else{
+		echo "Wrong";
+	}
+
+ }
+ function salesRemoveItem(){
+ 	$id = $_POST['id'];
+ 	$purchase = new Purchase;
+	$sql = $purchase->salesRemoveItem($id);
+	if ($sql) {
+		echo "remove";
+	}
+ }
