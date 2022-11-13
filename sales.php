@@ -155,7 +155,7 @@
 	          	</div>
         	</div>
         </div>
-        <button class="go">Go</button>
+        <button class="go btn btn-primary btn-sam mt-3">Go</button>
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->

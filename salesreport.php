@@ -35,12 +35,12 @@
             <h5>Summery</h5>
             <form method="GET">
             	<input type="date" name="sdate" placeholder="dd-mm-yyyy" value="" class="form-control">
-            	<button class="btn btn-success">Search</button>
+            	<button class="btn btn-success mt-2">Search</button>
             </form>
-            <table class="table">
+            <table class="table mt-3">
             	<thead>
             		<tr>
-            			<th>#sl</th>
+            			<th>SL No.</th>
             			<th>Date</th>
             			<th>Invoice</th>
             			<th>Total Quantity</th>

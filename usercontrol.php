@@ -26,9 +26,10 @@ include "includes/mainslider.php";
       <div class="container">
         <div class="row mb-0">
           <div class="col-sm-0">
-            <h1 class="m-0">Branch User List</h1>
+            
           </div><!-- /.col -->
           <div class="col-sm-6">
+          <h1 class="m-0">Branch User List</h1>
             <ol class="breadcrumb float-sm-right">
               <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v2</li> -->
@@ -75,6 +76,7 @@ include "includes/mainslider.php";
                   </tr>
                 </thead>
                 <tbody>
+
                   <?php
 
                   include "Classes/Branch.php";
@@ -95,11 +97,11 @@ include "includes/mainslider.php";
                   }
 
                   $obj = $branch->allBranches();
-                  if ($obj->num_rows > 0) {
+                  if ($obj->num_rows > 0) { $sl=1;
                     while ($row = $obj->fetch_assoc()) {
-                      $sl = 1;
+                      // $sl = 1;
                       if ($row["status"] == 1) {
-                        $status = '<a href="usercontrol.php?active=' . $row["id"] . '" 
+                        $status = '<a href="usercontrol.php?active=' . $row["id"] .'" 
                         name="active" class="btn btn-success btn-sm">
                         <i class="fas fa-eye"></i>
                         </a>';
@@ -128,7 +130,7 @@ include "includes/mainslider.php";
                   </tr>
                 </tbody>
 
-              <?php $sl++; ?> 
+              <!-- <?php $sl++; ?>  -->
 
                <!-- Delete Modal -->
             <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

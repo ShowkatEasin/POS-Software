@@ -63,6 +63,7 @@
                     if(isset($_POST['add'])){
                       echo $product->addNewProduct($_POST);
 
+
                     }
                   ?> 
                   <form method="POST">

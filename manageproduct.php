@@ -64,7 +64,7 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#slNo</th>
+                      <th>SL No.</th>
                       <th>Product Name</th>
                       <th>Des</th>
                       <th>Barcode</th>
