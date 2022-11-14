@@ -17,7 +17,6 @@
      <?php 
       include "includes/mainslider.php";
     ?> 
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -45,7 +44,6 @@
                       $obj = new Dashboard;
                       $data = $obj->totalBranch()->fetch_assoc();
                       echo $data["totalBranch"];
-
                   ?>
                 </span>
               </div>
