@@ -96,7 +96,7 @@
                     <label for="salePrice">Sale Price</label>
                     <input name="salePrice" type="number" class="form-control" id="salePrice" placeholder="Enter Sale Price">
                   </div>
-
+                  
                 </div>
               
                

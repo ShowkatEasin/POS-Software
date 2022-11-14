@@ -131,13 +131,13 @@
               <li class="nav-item">
                 <a href="salesreport.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sales</p>
+                  <p>Sales Report</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="salessummery.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Purchase</p>
+                  <p>Purchase Report</p>
                 </a>
               </li>
             </ul>

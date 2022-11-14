@@ -10,7 +10,6 @@ class Product
 	{
 	   $this->con=new mysqli("localhost","root","","pos_batch05");		
 	}
-
     function addNewProduct($allData){
        
        $name = $allData["name"];
@@ -20,7 +19,6 @@ class Product
        $barcode = $allData["barcode"];
        $costPrice = $allData["costPrice"];
        $salePrice = $allData["salePrice"];
-
        $sql=$this->con->query("INSERT INTO tbl_product(name,des,size,color,barcode,costPrice,salePrice)VALUES('$name','$des','$size','$color','$barcode','$costPrice','$salePrice')");
 
        if($sql){
