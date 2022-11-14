@@ -13,7 +13,7 @@ class Branch {
 			$email = $allData["email"];
 			$phone = $allData["phone"];
 			$password = $allData["password"];
-			$rpassword = $allData["rpassword"];
+			$rpassword = $allData["rpassword"];		
 			if($password !=$rpassword){
 				return '<div class="alert alert-danger"><strong>Error: </strong>Password Not Match</div>';
 			}
@@ -42,8 +42,7 @@ class Branch {
 			else{
 
 				
-				//$password = md5($password);    ------PROBLEM-----------
-
+				// $password = md5($password);   
 
 				$sql = $this->con->query("SELECT * FROM tbl_branch WHERE
 				 (mName='$userName' OR email = '$userName' OR phone = '$userName')
