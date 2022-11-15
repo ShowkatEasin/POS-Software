@@ -28,12 +28,12 @@
   			<h4 class="text-center">Softness IT</h4>
   			---------------------------------------------------------
 
-  			<table>
+  			<table border="1">
   				<tr>
-  					<th>#sl</th>
+  					<th>SL</th>
   					<th>Price</th>
-  					<th>qnt</th>
-  					<th>sub T.</th>
+  					<th>Quantity</th>
+  					<th>VAT & TAX</th>
   				</tr>
   				<tr>
   					<td>01</td>
@@ -72,6 +72,7 @@
   					<td>200.00/-</td>
   				</tr>
   				------------------------------------------------------------
+				
   				<tr>
   					<td colspan="4"><p><strong>Total Amount:</strong></p></td>
   					<td colspan="4">3050.00/-</td>

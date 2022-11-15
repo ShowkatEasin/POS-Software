@@ -155,7 +155,7 @@
 	          	</div>
         	</div>
         </div>
-        <button class="go btn btn-primary btn-sam mt-3">Go</button>
+        <button class="go btn btn-primary btn-sam mt-3">Go for Invoice</button>
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
