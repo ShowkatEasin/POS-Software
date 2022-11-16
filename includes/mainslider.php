@@ -39,6 +39,15 @@
           <li class="nav-header">Controls Area</li>
 
           <li class="nav-item">
+            <a href="dashboard.php" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="usercontrol.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
@@ -143,14 +152,7 @@
             </ul>
           </li>
           
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
+          
           
           <li class="nav-item">
             <a href="logout.php" class="nav-link">
