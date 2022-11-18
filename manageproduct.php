@@ -63,14 +63,14 @@
               <div class="card-body p-0">
                 <table class="table">
                   <thead>
-                    <tr>
+                    <tr colspan="2">
                       <th>SL No.</th>
                       <th>Product Name</th>
                       <th>Des</th>
                       <th>Barcode</th>
                       <th>CostPrice</th>
                       <th>SalePrice</th>
-                      <th colspan="2">Action</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
