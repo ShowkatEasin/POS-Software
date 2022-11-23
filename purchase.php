@@ -41,24 +41,28 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row mt-1">
           <div class="col-md-3">
           	<div class="from-group">
+				<p>Select Date</p>
           		<input type="date" id="pdate" class="form-control">
           	</div>
           </div>
           <div class="col-md-3">
           	<div class="from-group">
+				<p>Enter Company Name</p>
           		<input type="text" id="cname" class="form-control" placeholder="Enter Company Name">
           	</div>
           </div>
           <div class="col-md-3">
           	<div class="from-group">
+				<p>Enter Invoice Number</p>
           		<input type="text" id="invoice" class="form-control" placeholder="Enter Invoice Number">
           	</div>
           </div>
           <div class="col-md-3">
           	<div class="from-group">
+				<p>Available Stock</p>
           		<input readonly type="text" id="stock" class="form-control" placeholder="Available Stock">
           	</div>
           </div>
@@ -66,28 +70,32 @@
         <div class="row mt-3">
         	<div class="col-md-3">
           	<div class="from-group">
+			  <p>Enter Product Barcode</p>
           		<input type="text" id="barcode" class="form-control" placeholder="Enter Product Barcode">
           	</div>
           </div>
           <div class="col-md-3">
           	<div class="from-group">
+				<p>Product Cost Price</p>
           		<input readonly type="text" id="cost_price" class="form-control" placeholder="Product Cost Price">
           	</div>
           </div>
           		<input readonly type="hidden" id="product_id" class="form-control" placeholder="Product Cost Price">
           <div class="col-md-3">
           	<div class="from-group">
+			  <p>Enter Quantity</p>
           		<input type="text" id="quantity" class="form-control" placeholder="Enter Quantity">
           	</div>
           </div>
           <div class="col-md-3">
           	<div class="from-group">
+				<p>Total</p>
           		<input readonly type="text" id="total" class="form-control" placeholder="Total">
           	</div>
-          	<button class="addItem btn btn-info mt-2">Add Item</button>
+          	<button class="addItem btn btn-info mt-4">Add Item</button>
           </div>
         </div>
-        <div class="row mt-2">
+        <div class="row mt-3">
         	<table class="table" border="1">
         		<thead>
         			<tr>
@@ -107,15 +115,18 @@
         <div class="row">
         	<div class="col-md-3">
 	          	<div class="from-group">
+				  <p>Total Quantity</p>
 	          		<input type="text" id="totalQnt" class="form-control" placeholder="Total Quantity">
 	          	</div>
         	</div>
         	<div class="col-md-3">
         		<div class="from-group">
+					<p>Total Amount</p>
 	          		<input type="text" id="totalAmount" class="form-control" placeholder="Total Amount">
 	          	</div>
         	</div>
         	<div class="col-md-3">
+				<p>Discount</p>
         		<div class="from-group">
 	          		<select id="dis" class="form-control">
                   <option value="0">10%</option>
@@ -138,26 +149,31 @@
         	</div>
         	<div class="col-md-3">
         		<div class="from-group">
+					<p>Discount Amount</p>
 	          		<input type="text" id="disamount" class="form-control" placeholder="Dis. Amount">
 	          	</div>
         	</div>
-        	<div class="col-md-3 mt-2">
+        	<div class="col-md-3 mt-3">
         		<div class="from-group">
+					<p>Grand Total</p>
 	          		<input type="text" id="grandTotal" class="form-control" placeholder="Grand Total">
 	          	</div>
         	</div>
-        	<div class="col-md-3 mt-2">
+        	<div class="col-md-3 mt-3">
         		<div class="from-group">
+					<p>Payment</p>
 	          		<input type="text" id="pay" class="form-control" placeholder="Payment">
 	          	</div>
         	</div>
-        	<div class="col-md-3 mt-2">
+        	<div class="col-md-3 mt-3">
         		<div class="from-group">
-	          		<input type="text" id="due" class="form-control" placeholder="due">
+					<p>Due</p>
+	          		<input type="text" id="due" class="form-control" placeholder="Due">
 	          	</div>
         	</div>
-        	<div class="col-md-3 mt-2">
+        	<div class="col-md-3 mt-3">
         		<div class="from-group">
+					<p>Click to Save</p>
 	          		<button id="save" class="btn btn-success form-control">Save & Print</button>
 	          	</div>
         	</div>
